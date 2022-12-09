@@ -11,7 +11,7 @@ export default function Sessoes() {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${params.id}/showtimes`);
         requisicao.then(resposta => {
             setSessoes(resposta.data);
-            setDias(resposta.data.days)
+            setDias(resposta.data.days);
         });
     }, [params.id]);
     return(

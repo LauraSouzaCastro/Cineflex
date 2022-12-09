@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GlobalStyle from './globalStyles';
 import Filmes from './Filmes';
 import Sessoes from './Sessoes';
+import Assentos from './Assentos'
 export default function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Filmes />} />
           <Route path="/sessoes/:id" element={<Sessoes />} />
+          <Route path="/assentos/:id" element={<Assentos />} />
         </Routes>
       </AppStyled>
     </BrowserRouter>

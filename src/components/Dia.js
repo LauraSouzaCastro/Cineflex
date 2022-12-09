@@ -1,12 +1,11 @@
 import styled from "styled-components"
-
+import { Link } from "react-router-dom";
 export default function Dia({dia}) {
-    console.log(dia)
     return(
         <>
             <Data>{dia.weekday} - {dia.date}</Data>
             <ContainerBotao>
-                {dia.showtimes.map((h) => <Botao key={h.id}>{h.name}</Botao>)}
+                {dia.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao>{h.name}</Botao></Link>)}
             </ContainerBotao>
         </>
     )

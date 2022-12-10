@@ -2,13 +2,13 @@ import styled from 'styled-components';
 export default function Rodape({sessao}) {
     if(sessao.hasOwnProperty('movie')){
         return(
-            <ContainerRodape>
+            <ContainerRodape data-test="footer">
                 <CardFilme>
                     <img src={sessao.movie.posterURL} alt={sessao.movie.title} />
                 </CardFilme>
                 <Titulo>{sessao.movie.title}<br/>{sessao.day.weekday} - {sessao.name}</Titulo>
             </ContainerRodape>
-        )
+        );
     }else{
         return(
             <ContainerRodape data-test="footer">
@@ -17,7 +17,7 @@ export default function Rodape({sessao}) {
                 </CardFilme>
                 <Titulo>{sessao.title}</Titulo>
             </ContainerRodape>
-        )
+        );
     }
 }
 
@@ -32,7 +32,7 @@ const ContainerRodape = styled.div`
     display: flex;
     align-items: center;
     padding-left: 10px;
-`
+`;
 const Titulo = styled.div`
     width: 280px;
     font-family: 'Roboto';
@@ -41,7 +41,7 @@ const Titulo = styled.div`
     font-size: 26px;
     line-height: 30px;
     color: #293845;
-`
+`;
 const CardFilme = styled.div`
     width: 64px;
     height: 89px;
@@ -56,4 +56,4 @@ const CardFilme = styled.div`
         width: 48px;
         height: 72px;
     }
-`
+`;

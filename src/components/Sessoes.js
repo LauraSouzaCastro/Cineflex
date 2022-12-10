@@ -25,8 +25,8 @@ export default function Sessoes() {
             </ContainerDia>
             <Rodape sessao={sessoes}/>
         </>
-    )
+    );
 }
 const ContainerDia = styled.div`
     margin-bottom: 130px;
-`
+`;

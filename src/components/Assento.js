@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default function Assento({seat, selecionados, setSelecionados}) {
     function clicar(){
@@ -8,7 +8,9 @@ export default function Assento({seat, selecionados, setSelecionados}) {
             if(selecionados.find(e => e === seat)){
                 let array = []
                 for(let i = 0; i < selecionados.length; i++){
-                    if(selecionados[i] !== seat) array.push(selecionados[i]);
+                    if(selecionados[i] !== seat){
+                        array.push(selecionados[i]);
+                    }
                 }
                 setSelecionados([...array]);
             }else{
@@ -18,7 +20,7 @@ export default function Assento({seat, selecionados, setSelecionados}) {
     }
     return(
         <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar} data-test="seat">{seat.name}</BotaoAssento>
-    )
+    );
 }
 const BotaoAssento = styled.button`
     box-sizing: border-box;
@@ -36,4 +38,4 @@ const BotaoAssento = styled.button`
     letter-spacing: 0.04em;
     margin-right: 5px;
     margin-bottom: 18px;
-`
+`;

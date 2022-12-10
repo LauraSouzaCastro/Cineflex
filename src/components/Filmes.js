@@ -18,7 +18,7 @@ export default function Filmes() {
               {filmes.map((f) => <Link to={`/sessoes/${f.id}`} key={f.id} data-test="movie"><CardFilme><img src={f.posterURL} alt={f.title}/></CardFilme></Link>)}
             </ContainerFilmes>
         </>
-    )
+    );
 }
 
 const ContainerFilmes = styled.div`
@@ -27,7 +27,7 @@ const ContainerFilmes = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-`
+`;
 const CardFilme = styled.div`
   width: 145px;
   height: 209px;
@@ -42,4 +42,4 @@ const CardFilme = styled.div`
     width: 129px;
     height: 193px;
   }
-`
+`;

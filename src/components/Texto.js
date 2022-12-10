@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export default function Texto({texto}){
-    return <StyledTexto>{texto}</StyledTexto>
+    return (<StyledTexto>{texto}</StyledTexto>);
 }
 const StyledTexto = styled.div`
   width: 100%;
@@ -15,4 +15,4 @@ const StyledTexto = styled.div`
   justify-content: center;
   letter-spacing: 0.04em;
   color: #293845;
-`
+`;

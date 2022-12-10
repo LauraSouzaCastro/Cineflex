@@ -27,11 +27,11 @@ export default function Assentos({nome, setNome, cpf, setCpf, selecionados, setS
             <Formulario selecionados={selecionados} nome={nome} setNome={setNome} cpf={cpf} setCpf={setCpf}/>
             <Rodape sessao={assentos}/>
         </>
-    )
+    );
 }
 const ContainerAssentos = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 24px;
-`
+`;

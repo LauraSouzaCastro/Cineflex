@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 export default function Dia({dia}) {
     return(
@@ -8,7 +8,7 @@ export default function Dia({dia}) {
                 {dia.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao data-test="showtime">{h.name}</Botao></Link>)}
             </ContainerBotao>
         </div>
-    )
+    );
 }
 const Data = styled.div`
     width: 100%;
@@ -23,12 +23,12 @@ const Data = styled.div`
     letter-spacing: 0.02em;
     color: #293845;
     padding-left: 24px;
-`
+`;
 const ContainerBotao = styled.div`
     padding: 20px 15px;
     display: flex;
     flex-wrap: wrap;
-`
+`;
 const Botao = styled.button`
     width: 83px;
     height: 43px;
@@ -43,4 +43,4 @@ const Botao = styled.button`
     letter-spacing: 0.02em;
     color: #FFFFFF;
     margin-left: 8px;
-`
+`;

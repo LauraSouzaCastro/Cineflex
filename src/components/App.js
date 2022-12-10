@@ -4,7 +4,7 @@ import GlobalStyle from './globalStyles';
 import Filmes from './Filmes';
 import Sessoes from './Sessoes';
 import Assentos from './Assentos'
-import Sucesso from './Sucesso'
+import Sucesso from './Sucesso';
 import { useState } from 'react';
 
 export default function App() {
@@ -33,7 +33,7 @@ const AppStyled = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 70px;
-`
+`;
 const Topo = styled.div`
   position: fixed;
   left: 0;
@@ -48,4 +48,4 @@ const Topo = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 34px;
   line-height: 40px;
-`
+`;

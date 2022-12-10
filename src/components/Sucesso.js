@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 export default function Sucesso({nome, cpf, selecionados, assentos, setNome, setCpf, setSelecionados}){
     return (
@@ -18,7 +18,7 @@ export default function Sucesso({nome, cpf, selecionados, assentos, setNome, set
             </div>
             <Link to="/" data-test="go-home-btn"><Botao onClick={() => {setNome("");setCpf("");setSelecionados([...[]]);}}>Voltar pra Home</Botao></Link>
         </Container>
-    )
+    );
 }
 
 const Container = styled.div`
@@ -28,7 +28,7 @@ const Container = styled.div`
     div{
         align-self: start;
     }
-`
+`;
 const Titulo = styled.p`
     font-family: 'Roboto';
     font-style: normal;
@@ -39,7 +39,7 @@ const Titulo = styled.p`
     color: #293845;
     padding-left: 29px;
     padding-bottom: 10px;
-`
+`;
 const Dados = styled.div`
     font-family: 'Roboto';
     font-style: normal;
@@ -50,7 +50,7 @@ const Dados = styled.div`
     color: #293845;
     padding-left: 29px;
     padding-bottom: 50px;
-`
+`;
 const TextoSucesso = styled.div`
     width: 100%;
     height: 110px;
@@ -65,7 +65,7 @@ const TextoSucesso = styled.div`
     text-align: center;
     letter-spacing: 0.04em;
     color: #247A6B;
-`
+`;
 const Botao = styled.button`
     width: 225px;
     height: 42px;
@@ -80,4 +80,4 @@ const Botao = styled.button`
     letter-spacing: 0.04em;
     color: #FFFFFF;
     margin-top: 50px;
-`
+`;

@@ -16,7 +16,7 @@ export default function Descricao(){
                 <p>Indisponível</p>
             </div>
         </ContainerDescricao>
-    )
+    );
 }
 
 const CorAssento = styled.div`
@@ -27,7 +27,7 @@ const CorAssento = styled.div`
     border-color: ${props => props.borda};
     border-radius: 17px;
     margin-bottom: 5px;
-`
+`;
 const ContainerDescricao = styled.div`
     display: flex;
     justify-content: space-around;
@@ -48,4 +48,4 @@ const ContainerDescricao = styled.div`
         letter-spacing: -0.013em;
         color: #4E5A65;
     }
-`
+`;

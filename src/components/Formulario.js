@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 export default function Formulario({selecionados, nome, setNome, cpf, setCpf}){
     const navigate = useNavigate()
     function reservar (event) {
 		event.preventDefault();
-        const ids = selecionados.map((s) => s.id)
+        const ids = selecionados.map((s) => s.id);
         const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
 			ids: ids,
             name: nome,
@@ -23,7 +22,7 @@ export default function Formulario({selecionados, nome, setNome, cpf, setCpf}){
             <CaixaInput required type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
             <Botao type="submit">Reservar assento(s)</Botao>
         </ContainerForm>
-    )
+    );
 }
 
 const CaixaInput = styled.input`
@@ -45,7 +44,7 @@ const CaixaInput = styled.input`
         align-items: center;
         color: #AFAFAF;
     }
-`
+`;
 const ContainerForm = styled.form`
     margin-top: 40px;
     display: flex;
@@ -60,7 +59,7 @@ const ContainerForm = styled.form`
         color: #293845;
         margin-bottom: 5px;
     }
-`
+`;
 const Botao = styled.button`
     width: 225px;
     height: 42px;
@@ -76,4 +75,4 @@ const Botao = styled.button`
     color: #FFFFFF;
     align-self: center;
     margin-top: 57px;
-`
+`;

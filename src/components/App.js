@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/" element={<Filmes />} />
           <Route path="/sessoes/:id" element={<Sessoes />} />
           <Route path="/assentos/:id" element={<Assentos nome={nome} setNome={setNome} cpf={cpf} setCpf={setCpf} selecionados={selecionados} setSelecionados={setSelecionados} assentos={assentos} setAssentos={setAssentos}/>} />
-          <Route path="/sucesso" element={<Sucesso nome={nome} cpf={cpf} selecionados={selecionados} assentos={assentos}/>} />
+          <Route path="/sucesso" element={<Sucesso nome={nome} cpf={cpf} selecionados={selecionados} assentos={assentos} setNome={setNome} setCpf={setCpf} setSelecionados={setSelecionados}/>} />
         </Routes>
       </AppStyled>
     </BrowserRouter>

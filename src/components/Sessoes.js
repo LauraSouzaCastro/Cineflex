@@ -6,7 +6,7 @@ import Dia from './Dia';
 import Texto from './Texto';
 import Rodape from './Rodape';
 
-export default function Sessoes() {
+export default function Sessoes({setVoltar, setIdSessao}) {
     const params = useParams();
     const [sessoes, setSessoes] = useState([]);
     const [dias, setDias] = useState([]);
@@ -16,7 +16,9 @@ export default function Sessoes() {
             setSessoes(resposta.data);
             setDias(resposta.data.days);
         });
-    }, [params.id]);
+        setVoltar("/");
+        setIdSessao(params.id);
+    }, [params.id, setVoltar, setIdSessao]);
     return(
         <>
             <Texto texto="Selecione o horário" />

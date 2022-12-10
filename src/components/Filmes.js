@@ -3,14 +3,21 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import Texto from './Texto';
-export default function Filmes() {
-    const [filmes, setFilmes] = useState([])
+export default function Filmes({setNome, setCpf, setSelecionados, setAssentos, setVoltar, setIdSessao, setIdAssentos}) {
+    const [filmes, setFilmes] = useState([]);
     useEffect(() => {
           const requisicao = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
           requisicao.then(resposta => {
               setFilmes(resposta.data);
           });
-      }, []);
+          setNome("");
+          setCpf("");
+          setSelecionados([]);
+          setAssentos([]);
+          setVoltar(null);
+          setIdSessao(null);
+          setIdAssentos(null);
+      }, [setNome, setCpf, setSelecionados, setAssentos, setVoltar, setIdSessao, setIdAssentos]);
     return (
         <>
             <Texto texto="Selecione o filme" />

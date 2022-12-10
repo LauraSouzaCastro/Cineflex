@@ -8,17 +8,19 @@ import Descricao from './Descricao';
 import Formulario from './Formulario';
 import styled from 'styled-components';
 
-export default function Assentos({nome, setNome, cpf, setCpf, selecionados, setSelecionados, assentos, setAssentos}) {
+export default function Assentos({setIdAssentos, idSessao, setVoltar, nome, setNome, cpf, setCpf, selecionados, setSelecionados, assentos, setAssentos}) {
     const params = useParams();
     const [seats, setSeats] = useState([]);
-
     useEffect(() => {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${params.id}/seats`);
         requisicao.then(resposta => {
-            setAssentos(resposta.data);
-            setSeats(resposta.data.seats);
+        setAssentos(resposta.data);
+        setSeats(resposta.data.seats);
         });
-    }, [params.id]);
+        setVoltar(`/sessoes/${idSessao}`);
+        setIdAssentos(params.id);
+        setSelecionados([...[]]);
+    }, [params.id, setAssentos, setVoltar, idSessao, setIdAssentos, setSelecionados]);
     return (
         <>
             <Texto texto="Selecione o(s) assento(s)"/>

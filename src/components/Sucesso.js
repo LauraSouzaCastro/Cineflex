@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-export default function Sucesso({nome, cpf, selecionados, assentos, setNome, setCpf, setSelecionados}){
+import { useEffect } from 'react';
+export default function Sucesso({idAssentos, setVoltar, nome, cpf, selecionados, assentos}){
+    useEffect(() => {
+       setVoltar(`/assentos/${idAssentos}`);
+    }, [idAssentos, setVoltar]);
     return (
         <Container>
             <TextoSucesso>Pedido feito <br/> com sucesso!</TextoSucesso>
@@ -16,7 +20,7 @@ export default function Sucesso({nome, cpf, selecionados, assentos, setNome, set
                 <Titulo>Comprador</Titulo>
                 <Dados>Nome: {nome} <br/> CPF: {cpf}</Dados>
             </div>
-            <Link to="/" data-test="go-home-btn"><Botao onClick={() => {setNome("");setCpf("");setSelecionados([...[]]);}}>Voltar pra Home</Botao></Link>
+            <Link to="/" data-test="go-home-btn"><Botao>Voltar pra Home</Botao></Link>
         </Container>
     );
 }
@@ -80,4 +84,5 @@ const Botao = styled.button`
     letter-spacing: 0.04em;
     color: #FFFFFF;
     margin-top: 50px;
+    margin-bottom: 20px;
 `;

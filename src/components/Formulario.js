@@ -3,16 +3,20 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 export default function Formulario({selecionados, nome, setNome, cpf, setCpf}){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     function reservar (event) {
 		event.preventDefault();
-        const ids = selecionados.map((s) => s.id);
-        const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
-			ids: ids,
-            name: nome,
-			cpf: cpf
-		});
-        requisicao.then(() => navigate("/sucesso")) ;
+        if(selecionados.length === 0){
+            alert("Selecione pelo menos um assento!")
+        }else{
+            const ids = selecionados.map((s) => s.id);
+            const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
+                ids: ids,
+                name: nome,
+                cpf: cpf
+            });
+            requisicao.then(() => navigate("/sucesso")) ;
+        }
 	}
     return(
         <ContainerForm onSubmit={reservar}>
@@ -49,6 +53,7 @@ const ContainerForm = styled.form`
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 150px;
     p{
         margin-left: 24px;
         font-family: 'Roboto';

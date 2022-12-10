@@ -11,7 +11,7 @@ export default function Rodape({sessao}) {
         )
     }else{
         return(
-            <ContainerRodape>
+            <ContainerRodape data-test="footer">
                 <CardFilme>
                     <img src={sessao.posterURL} alt={sessao.title} />
                 </CardFilme>

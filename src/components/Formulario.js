@@ -17,10 +17,10 @@ export default function Formulario({selecionados, nome, setNome, cpf, setCpf}){
     return(
         <ContainerForm onSubmit={reservar}>
             <p>Nome do comprador:</p>
-            <CaixaInput required type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} />
+            <CaixaInput required type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} data-test="client-name"/>
             <p>CPF do comprador:</p>
-            <CaixaInput required type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
-            <Botao type="submit">Reservar assento(s)</Botao>
+            <CaixaInput required type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} data-test="client-cpf"/>
+            <Botao type="submit" data-test="book-seat-btn">Reservar assento(s)</Botao>
         </ContainerForm>
     );
 }

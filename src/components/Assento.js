@@ -17,7 +17,7 @@ export default function Assento({seat, selecionados, setSelecionados}) {
         }
     }
     return(
-        <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar}>{seat.name}</BotaoAssento>
+        <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar} data-test="seat">{seat.name}</BotaoAssento>
     )
 }
 const BotaoAssento = styled.button`

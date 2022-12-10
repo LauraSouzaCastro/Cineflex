@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 export default function Dia({dia}) {
     return(
-        <>
+        <div data-test="movie-day" >
             <Data>{dia.weekday} - {dia.date}</Data>
             <ContainerBotao>
-                {dia.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao>{h.name}</Botao></Link>)}
+                {dia.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao data-test="showtime">{h.name}</Botao></Link>)}
             </ContainerBotao>
-        </>
+        </div>
     )
 }
 const Data = styled.div`

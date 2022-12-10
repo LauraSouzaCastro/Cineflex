@@ -15,7 +15,7 @@ export default function Filmes() {
         <>
             <Texto texto="Selecione o filme" />
             <ContainerFilmes>
-              {filmes.map((f) => <Link to={`/sessoes/${f.id}`} key={f.id}><CardFilme><img src={f.posterURL} alt={f.title}/></CardFilme></Link>)}
+              {filmes.map((f) => <Link to={`/sessoes/${f.id}`} key={f.id} data-test="movie"><CardFilme><img src={f.posterURL} alt={f.title}/></CardFilme></Link>)}
             </ContainerFilmes>
         </>
     )

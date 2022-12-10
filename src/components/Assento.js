@@ -1,8 +1,13 @@
 import styled from "styled-components"
 
 export default function Assento({seat}) {
+    function clicar(disponivel){
+        if(!disponivel){
+            alert("Esse assento não está disponível");
+        }
+    }
     return(
-        <BotaoAssento disponivel={seat.isAvailable}>{seat.name}</BotaoAssento>
+        <BotaoAssento disponivel={seat.isAvailable} onClick={() => clicar(seat.isAvailable)}>{seat.name}</BotaoAssento>
     )
 }
 const BotaoAssento = styled.button`

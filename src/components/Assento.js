@@ -1,22 +1,25 @@
+import { useState } from "react";
 import styled from "styled-components"
 
-export default function Assento({seat}) {
-    function clicar(disponivel){
-        if(!disponivel){
+export default function Assento({seat, selecionados, setSelecionados}) {
+    function clicar(){
+        if(!seat.isAvailable){
             alert("Esse assento não está disponível");
+        }else{
+            setSelecionados([...selecionados, seat]);
         }
     }
     return(
-        <BotaoAssento disponivel={seat.isAvailable} onClick={() => clicar(seat.isAvailable)}>{seat.name}</BotaoAssento>
+        <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar}>{seat.name}</BotaoAssento>
     )
 }
 const BotaoAssento = styled.button`
     box-sizing: border-box;
     width: 26px;
     height: 26px;
-    background-color: ${props => props.disponivel ?  "#C3CFD9": "#FBE192"};
+    background-color: ${props => props.selecionado ? "#1AAE9E" : props.disponivel ?  "#C3CFD9": "#FBE192"};
     border: 1px solid;
-    border-color: ${props => props.disponivel ?  "#808F9D": "#F7C52B"};
+    border-color: ${props => props.selecionado ? "#0E7D71" : props.disponivel ?  "#808F9D": "#F7C52B"};
     border-radius: 12px;
     font-family: 'Roboto';
     font-style: normal;

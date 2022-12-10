@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom"
 
-
-export default function Formulario(){
+export default function Formulario({selecionados}){
     const [nome, setNome] = useState("")
     const [cpf, setCpf] = useState("")
+    const navigate = useNavigate()
     function reservar (event) {
 		event.preventDefault();
+        const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
+			ids: selecionados,
+            name: nome,
+			cpf: cpf
+		});
+        requisicao.then(() => navigate("/sucesso")) ;
 	}
     return(
         <ContainerForm onSubmit={reservar}>

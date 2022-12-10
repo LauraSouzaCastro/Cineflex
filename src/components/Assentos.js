@@ -27,7 +27,7 @@ export default function Assentos() {
             <Texto texto="Selecione o(s) assento(s)"/>
             <ContainerAssentos>{seats.map((a) => <Assento key={a.id} seat={a} selecionados={selecionados} setSelecionados={setSelecionados}/>)}</ContainerAssentos>
             <Descricao />
-            <Formulario />
+            <Formulario selecionados={selecionados}/>
             <Rodape sessao={assentos}/>
         </>
     )

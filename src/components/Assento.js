@@ -5,19 +5,19 @@ export default function Assento({seat, selecionados, setSelecionados}) {
         if(!seat.isAvailable){
             alert("Esse assento não está disponível");
         }else{
-            if(selecionados.find(e => e === seat)){
+            if(selecionados.find(e => e === seat.id)){
                 let array = []
                 for(let i = 0; i < selecionados.length; i++){
-                    if(selecionados[i] !== seat) array.push(selecionados[i]);
+                    if(selecionados[i] !== seat.id) array.push(selecionados[i]);
                 }
                 setSelecionados([...array]);
             }else{
-                setSelecionados([...selecionados, seat]);
+                setSelecionados([...selecionados, seat.id]);
             }
         }
     }
     return(
-        <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar}>{seat.name}</BotaoAssento>
+        <BotaoAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat.id)} onClick={clicar}>{seat.name}</BotaoAssento>
     )
 }
 const BotaoAssento = styled.button`

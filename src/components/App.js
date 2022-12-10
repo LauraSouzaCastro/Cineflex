@@ -4,6 +4,8 @@ import GlobalStyle from './globalStyles';
 import Filmes from './Filmes';
 import Sessoes from './Sessoes';
 import Assentos from './Assentos'
+import Sucesso from './Sucesso'
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Filmes />} />
           <Route path="/sessoes/:id" element={<Sessoes />} />
           <Route path="/assentos/:id" element={<Assentos />} />
+          <Route path="/sucesso" element={<Sucesso />} />
         </Routes>
       </AppStyled>
     </BrowserRouter>

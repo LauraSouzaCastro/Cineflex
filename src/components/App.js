@@ -5,8 +5,13 @@ import Filmes from './Filmes';
 import Sessoes from './Sessoes';
 import Assentos from './Assentos'
 import Sucesso from './Sucesso'
+import { useState } from 'react';
 
 export default function App() {
+  const [nome, setNome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [selecionados, setSelecionados] = useState([]);
+  const [assentos, setAssentos] = useState([]);
   return (
     <BrowserRouter>
       <GlobalStyle/>
@@ -15,8 +20,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Filmes />} />
           <Route path="/sessoes/:id" element={<Sessoes />} />
-          <Route path="/assentos/:id" element={<Assentos />} />
-          <Route path="/sucesso" element={<Sucesso />} />
+          <Route path="/assentos/:id" element={<Assentos nome={nome} setNome={setNome} cpf={cpf} setCpf={setCpf} selecionados={selecionados} setSelecionados={setSelecionados} assentos={assentos} setAssentos={setAssentos}/>} />
+          <Route path="/sucesso" element={<Sucesso nome={nome} cpf={cpf} selecionados={selecionados} assentos={assentos}/>} />
         </Routes>
       </AppStyled>
     </BrowserRouter>

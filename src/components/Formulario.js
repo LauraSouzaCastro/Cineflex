@@ -3,14 +3,13 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
 
-export default function Formulario({selecionados}){
-    const [nome, setNome] = useState("")
-    const [cpf, setCpf] = useState("")
+export default function Formulario({selecionados, nome, setNome, cpf, setCpf}){
     const navigate = useNavigate()
     function reservar (event) {
 		event.preventDefault();
+        const ids = selecionados.map((s) => s.id)
         const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
-			ids: selecionados,
+			ids: ids,
             name: nome,
 			cpf: cpf
 		});
